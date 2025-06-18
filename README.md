@@ -7,3 +7,8 @@ We are a SaaS (Software as as Service) firm that offers a subscription-based con
 ### Our Clients
 
 Our clients are sports stores, physical and / or online
+
+### Our Model Solution
+
+- Trained on Customer browsing history
+- Used to recommend the new set of products toshow to the browsing customer

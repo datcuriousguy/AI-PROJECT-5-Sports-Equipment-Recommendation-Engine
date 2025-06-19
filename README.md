@@ -16,3 +16,13 @@ Our clients are sports stores, physical and / or online
 ---
 
 ## Database Design
+
+We will design a mysql database containing the following:
+
+- client:
+    - Company Name
+    - Product Catalogue
+        - Product id
+        - Product Name
+        - Product Current Price
+        - Product Category (multi dimensional)

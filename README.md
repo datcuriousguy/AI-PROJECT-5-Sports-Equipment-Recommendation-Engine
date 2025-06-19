@@ -26,3 +26,10 @@ We will design a mysql database containing the following:
         - Product Name
         - Product Current Price
         - Product Category (multi dimensional)
+
+<aside>
+💡
+
+Note: By Multi-dimensional we mean each product having been designed for a particular set of activities (with a skew towards one or two), ehnce being recommended to customers whose interests in sports or browsing history pertain to the same.
+
+</aside>

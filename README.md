@@ -12,3 +12,7 @@ Our clients are sports stores, physical and / or online
 
 - Trained on Customer browsing history
 - Used to recommend the new set of products toshow to the browsing customer
+
+---
+
+## Database Design

@@ -47,3 +47,14 @@ Note: By Multi-dimensional we mean each product having been designed for a parti
 | `client_id` | INT (PK) | Unique ID for each client |
 | `company_name` | VARCHAR(100) | Sports brand name |
 | `product_catalogue` | TEXT / JSON | Optional: list of product IDs |
+
+### Table: Products
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| `product_id` | INT (PK) | Unique ID for each product |
+| `client_id` | INT (FK → Clients) | The company selling this product |
+| `product_name` | VARCHAR(100) | Name of the product |
+| `product_price` | DECIMAL(10,2) | Current price |
+| `product_category` | JSON / TEXT | Can store multi-dimensional tags (e.g., `["running", "men", "shoes"]`) |
+| `image_url` | TEXT | Optional: for frontend use |

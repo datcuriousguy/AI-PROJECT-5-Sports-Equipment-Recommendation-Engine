@@ -39,3 +39,9 @@ We will design a mysql database containing the following:
 Note: By Multi-dimensional we mean each product having been designed for a particular set of activities (with a skew towards one or two), ehnce being recommended to customers whose interests in sports or browsing history pertain to the same.
 
 </aside>
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| `client_id` | INT (PK) | Unique ID for each client |
+| `company_name` | VARCHAR(100) | Sports brand name |
+| `product_catalogue` | TEXT / JSON | Optional: list of product IDs |

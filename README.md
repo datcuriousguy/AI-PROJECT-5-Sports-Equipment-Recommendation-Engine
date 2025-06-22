@@ -40,6 +40,8 @@ Note: By Multi-dimensional we mean each product having been designed for a parti
 
 </aside>
 
+### Table: Clients
+
 | Column Name | Data Type | Description |
 | --- | --- | --- |
 | `client_id` | INT (PK) | Unique ID for each client |

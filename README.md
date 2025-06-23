@@ -70,3 +70,14 @@ Note: By Multi-dimensional we mean each product having been designed for a parti
 | `email` | VARCHAR(100) | Unique email |
 | `preferences` | TEXT / JSON | Optional: e.g. `["tennis", "training shoes"]` |
 | `device_type` | ENUM | 'mobile', 'desktop', 'tablet' |
+
+### Table: Browsing History
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| `interaction_id` | INT (PK) | Unique interaction entry |
+| `user_id` | INT (FK → Customers) | Who browsed |
+| `product_id` | INT (FK → Products) | Which product was browsed |
+| `interaction_type` | ENUM | 'view', 'click', 'add_to_cart', 'purchase' |
+| `timestamp` | DATETIME | When the interaction happened |
+| `session_id` | VARCHAR(100) | To track behavior in sessions |
+| `dwell_time_seconds` | INT | Time spent viewing the product (optional, derived) |

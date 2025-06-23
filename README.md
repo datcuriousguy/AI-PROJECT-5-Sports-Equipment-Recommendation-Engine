@@ -61,3 +61,12 @@ Note: By Multi-dimensional we mean each product having been designed for a parti
 
 
 ### Table: Customers
+
+| Column Name | Data Type | Description |
+| --- | --- | --- |
+| `user_id` | INT (PK) | Unique user ID |
+| `name` | VARCHAR(100) | Customer name |
+| `age` | INT | Age of customer |
+| `email` | VARCHAR(100) | Unique email |
+| `preferences` | TEXT / JSON | Optional: e.g. `["tennis", "training shoes"]` |
+| `device_type` | ENUM | 'mobile', 'desktop', 'tablet' |

@@ -58,3 +58,6 @@ Note: By Multi-dimensional we mean each product having been designed for a parti
 | `product_price` | DECIMAL(10,2) | Current price |
 | `product_category` | JSON / TEXT | Can store multi-dimensional tags (e.g., `["running", "men", "shoes"]`) |
 | `image_url` | TEXT | Optional: for frontend use |
+
+
+### Table: Customers

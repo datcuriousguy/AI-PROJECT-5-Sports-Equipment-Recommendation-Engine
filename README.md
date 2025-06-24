@@ -56,7 +56,7 @@ Note: By Multi-dimensional we mean each product having been designed for a parti
 | `client_id` | INT (FK → Clients) | The company selling this product |
 | `product_name` | VARCHAR(100) | Name of the product |
 | `product_price` | DECIMAL(10,2) | Current price in rupees |
-| `product_category` | JSON / TEXT | Can store multi-dimensional tags (e.g., `["running", "men", "shoes"]`) |
+| `product_category` | JSON / TEXT | Can store multi-dimensional tags (e.g., `["running", "men", "shoes"]`) And this can be used for search operations on a webpage UI. |
 | `image_url` | TEXT | Optional: for frontend use |
 
 ### Table: Customers

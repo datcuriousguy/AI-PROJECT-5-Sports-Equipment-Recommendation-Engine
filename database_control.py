@@ -14,3 +14,4 @@ def create_and_populate_clients_table():
     )
     # create cursor object
     cursor = conn.cursor()
+

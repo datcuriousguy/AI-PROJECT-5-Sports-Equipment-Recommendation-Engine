@@ -15,3 +15,11 @@ def create_and_populate_clients_table():
     # create cursor object
     cursor = conn.cursor()
 
+    create_table_query = """
+    CREATE TABLE IF NOT EXISTS Clients (
+        client_id INT AUTO_INCREMENT PRIMARY KEY,
+        company_name VARCHAR(100) NOT NULL,
+        product_catalogue TEXT
+    );
+    """
+    cursor.execute(create_table_query)

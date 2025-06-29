@@ -23,3 +23,14 @@ def create_and_populate_clients_table():
     );
     """
     cursor.execute(create_table_query)
+
+    # Prepare list of 50 sports companies
+    sports_companies = [
+        "Nike", "Adidas", "Puma", "Under Armour", "Reebok", "Asics", "New Balance", "Fila",
+        "Skechers", "Mizuno", "Columbia Sportswear", "The North Face", "Salomon", "Wilson Sporting Goods",
+        "Yonex", "Decathlon", "Lululemon Athletica", "Hoka One One", "Oakley", "Spalding",
+        "Brooks Running", "Champion", "Kappa", "Diadora", "Umbro", "Speedo", "Babolat", "Everlast",
+        "Callaway Golf", "Titleist", "Rawlings", "Slazenger", "HEAD", "Easton", "Butterfly",
+        "Joma", "Prince Sports", "Tecnifibre", "Mountain Hardwear", "Altra Running", "Patagonia",
+        "Gymshark", "Merrell", "Inov-8", "Trek", "Cannondale", "Raleigh", "Atomic", "Burton"
+    ]

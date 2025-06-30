@@ -34,3 +34,10 @@ def create_and_populate_clients_table():
         "Joma", "Prince Sports", "Tecnifibre", "Mountain Hardwear", "Altra Running", "Patagonia",
         "Gymshark", "Merrell", "Inov-8", "Trek", "Cannondale", "Raleigh", "Atomic", "Burton"
     ]
+
+    """
+    Note: the s in %s represents the string datatype which is substituted by the column names in the brackets, in the respective order L-R.
+    """
+
+    # Insert into table
+    insert_query = "INSERT INTO Clients (company_name, product_catalogue) VALUES (%s, %s)"

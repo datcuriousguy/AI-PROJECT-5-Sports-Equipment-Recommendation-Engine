@@ -49,3 +49,4 @@ def create_and_populate_clients_table():
         # json.dumps() converts python object into a json type string, which is needed
         # json.dumps([101, 102, 103]) becomes "[101, 102, 103]".
         product_catalogue_json = json.dumps(product_ids)
+        cursor.execute(insert_query, (name, product_catalogue_json))

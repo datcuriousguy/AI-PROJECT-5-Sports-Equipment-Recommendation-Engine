@@ -41,3 +41,8 @@ def create_and_populate_clients_table():
 
     # Insert into table
     insert_query = "INSERT INTO Clients (company_name, product_catalogue) VALUES (%s, %s)"
+
+    for name in sports_companies:
+
+        # some dummy ids for products in the product catalogue
+        product_ids = [i for i in range(100, 103)]

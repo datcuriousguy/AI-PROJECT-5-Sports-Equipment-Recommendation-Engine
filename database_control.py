@@ -46,3 +46,6 @@ def create_and_populate_clients_table():
 
         # some dummy ids for products in the product catalogue
         product_ids = [i for i in range(100, 103)]
+        # json.dumps() converts python object into a json type string, which is needed
+        # json.dumps([101, 102, 103]) becomes "[101, 102, 103]".
+        product_catalogue_json = json.dumps(product_ids)

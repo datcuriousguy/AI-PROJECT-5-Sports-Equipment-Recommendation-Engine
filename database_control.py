@@ -60,3 +60,5 @@ def create_and_populate_clients_table():
     cursor.close()
     conn.close()
     print("Clients table created!")
+
+create_and_populate_clients_table()

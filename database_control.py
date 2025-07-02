@@ -50,3 +50,12 @@ def create_and_populate_clients_table():
         # json.dumps([101, 102, 103]) becomes "[101, 102, 103]".
         product_catalogue_json = json.dumps(product_ids)
         cursor.execute(insert_query, (name, product_catalogue_json))
+
+    # Commit and close
+    """
+    commit() is analogous to "saving the file", and 
+    close() is analogous to closing it.
+    """
+    conn.commit()
+    cursor.close()
+    conn.close()

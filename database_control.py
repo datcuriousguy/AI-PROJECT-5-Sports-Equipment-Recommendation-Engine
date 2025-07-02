@@ -59,3 +59,4 @@ def create_and_populate_clients_table():
     conn.commit()
     cursor.close()
     conn.close()
+    print("Clients table created!")

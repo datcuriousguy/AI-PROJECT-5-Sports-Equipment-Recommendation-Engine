@@ -72,3 +72,6 @@ def create_products_table():
         password="password",
         database="ai_project_5_database"
     )
+
+    # again, cursor is needed to represent the builtin cursor of the conn credentials connector.
+    cursor = conn.cursor()

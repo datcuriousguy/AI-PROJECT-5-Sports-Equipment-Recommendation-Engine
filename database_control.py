@@ -62,3 +62,13 @@ def create_and_populate_clients_table():
     print("Clients table created!")
 
 create_and_populate_clients_table()
+
+""" PRODUCTS TABLE """
+
+def create_products_table():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )

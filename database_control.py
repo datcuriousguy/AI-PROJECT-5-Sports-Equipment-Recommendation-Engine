@@ -96,3 +96,4 @@ def create_products_table():
     # we close the cursor and connection. we don't need it to be open anymore (this is the opposite of mysql.connector.connect)
     cursor.close()
     conn.close()
+    print("Products table created :)")

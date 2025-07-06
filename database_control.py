@@ -75,3 +75,18 @@ def create_products_table():
 
     # again, cursor is needed to represent the builtin cursor of the conn credentials connector.
     cursor = conn.cursor()
+
+    # IF NOT EXISTS ensures no duplication
+    query = """
+    CREATE TABLE IF NOT EXISTS Products (
+        product_id INT AUTO_INCREMENT PRIMARY KEY,
+        client_id INT,
+        product_name VARCHAR(100) NOT NULL,
+        product_price DECIMAL(10,2),
+        product_category TEXT,  -- JSON-style string of tags
+        stock_quantity INT,
+        image_url VARCHAR(255),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (client_id) REFERENCES Clients(client_id) ON DELETE CASCADE
+    );
+    """

@@ -94,3 +94,5 @@ def create_products_table():
     # Like before, we 'commit' or 'save' the data in the table (or whatever changes have been made)
     conn.commit()
     # we close the cursor and connection. we don't need it to be open anymore (this is the opposite of mysql.connector.connect)
+    cursor.close()
+    conn.close()

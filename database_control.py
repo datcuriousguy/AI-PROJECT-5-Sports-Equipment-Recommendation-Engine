@@ -90,3 +90,5 @@ def create_products_table():
         FOREIGN KEY (client_id) REFERENCES Clients(client_id) ON DELETE CASCADE
     );
     """
+    cursor.execute(query)
+    # Like before, we 'commit' or 'save' the data in the table (or whatever changes have been made)

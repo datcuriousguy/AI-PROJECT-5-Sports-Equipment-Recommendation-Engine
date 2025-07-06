@@ -97,3 +97,5 @@ def create_products_table():
     cursor.close()
     conn.close()
     print("Products table created :)")
+
+# run1: got an error (see commit msg)

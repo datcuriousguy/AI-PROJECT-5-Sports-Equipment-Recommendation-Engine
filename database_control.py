@@ -100,3 +100,5 @@ def create_products_table():
 
 # run1: got an error (see commit msg)
 # updated pip and mysql-connector and it now works :)
+
+create_products_table()

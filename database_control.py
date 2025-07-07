@@ -140,3 +140,37 @@ def create_customers_table():
 create_customers_table()
 
 """ BROWSING HISTORY TABLE """
+
+import mysql.connector
+
+def create_browsing_history_table():
+    # Connect to your MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",        # MySQL username
+        password="password",    # MySQL password
+        database="ai_project_5_database"
+    )
+    cursor = conn.cursor()
+
+    # SQL query to create the Browsing_History table
+    query = """
+    CREATE TABLE IF NOT EXISTS Browsing_History (
+        interaction_id INT AUTO_INCREMENT PRIMARY KEY,
+        user_id INT,
+        product_id INT,
+        interaction_type ENUM('view', 'click', 'add_to_cart', 'purchase') NOT NULL,
+        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+        session_id VARCHAR(100),
+        dwell_time_seconds INT,
+        FOREIGN KEY (user_id) REFERENCES Customers(user_id) ON DELETE CASCADE,
+        FOREIGN KEY (product_id) REFERENCES Products(product_id) ON DELETE CASCADE
+    );
+    """
+
+    # same like others
+    cursor.execute(query)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    print("Browsing_History table created successfully")

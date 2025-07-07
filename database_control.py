@@ -138,3 +138,5 @@ def create_customers_table():
     print("Customers table created successfully!")
 
 create_customers_table()
+
+""" BROWSING HISTORY TABLE """

@@ -102,3 +102,37 @@ def create_products_table():
 # updated pip and mysql-connector and it now works :)
 
 create_products_table()
+
+""" CUSTOMERS TABLE """
+
+import mysql.connector
+
+def create_customers_table():
+    # Connect to the existing MySQL database
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+    cursor = conn.cursor()
+
+    # SQL query to create the Customers table
+    # You can see that this matches with the one in the readme.
+    query = """
+    CREATE TABLE IF NOT EXISTS Customers (
+        user_id INT AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(100),
+        age INT,
+        email VARCHAR(100) UNIQUE,
+        preferences TEXT,
+        device_type ENUM('mobile', 'desktop', 'tablet')
+    );
+    """
+
+    # Execute and commit like before
+    cursor.execute(query)
+    conn.commit()
+    cursor.close()
+    conn.close()
+    print("Customers table created successfully!")

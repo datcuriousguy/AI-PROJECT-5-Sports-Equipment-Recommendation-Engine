@@ -136,3 +136,5 @@ def create_customers_table():
     cursor.close()
     conn.close()
     print("Customers table created successfully!")
+
+create_customers_table()

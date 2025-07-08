@@ -217,3 +217,6 @@ def populate_clients_table():
     cursor.close()
     conn.close()
     print("Clients table populated")
+
+populate_clients_table()
+# run1: success

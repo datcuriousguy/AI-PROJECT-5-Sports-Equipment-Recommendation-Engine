@@ -183,3 +183,16 @@ DATABASE POPULATION
 ========================================================================================================================
 """
 
+import mysql.connector
+import json
+import random
+
+
+def populate_clients_table():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+    cursor = conn.cursor()

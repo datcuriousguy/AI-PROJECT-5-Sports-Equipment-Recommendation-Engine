@@ -205,3 +205,10 @@ def populate_clients_table():
     ]
 
     insert_query = "INSERT INTO Clients (company_name, product_catalogue) VALUES (%s, %s)"
+
+    for name in companies:
+        # this for loop creates a list of three random product ids per company name
+        product_ids = [random.randint(100, 200) for _ in range(3)]
+        product_catalogue = json.dumps(product_ids)
+        # this list is then turned into a string for being stored in mysql text field catalogue
+        cursor.execute(insert_query, (name, product_catalogue))

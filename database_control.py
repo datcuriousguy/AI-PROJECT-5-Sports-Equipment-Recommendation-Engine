@@ -212,3 +212,8 @@ def populate_clients_table():
         product_catalogue = json.dumps(product_ids)
         # this list is then turned into a string for being stored in mysql text field catalogue
         cursor.execute(insert_query, (name, product_catalogue))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+    print("Clients table populated")

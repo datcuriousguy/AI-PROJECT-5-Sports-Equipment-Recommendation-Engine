@@ -196,3 +196,10 @@ def populate_clients_table():
         database="ai_project_5_database"
     )
     cursor = conn.cursor()
+
+    # some sports brands
+    companies = [
+        "Nike", "Adidas", "Puma", "Under Armour", "Reebok", "Asics", "New Balance", "Fila",
+        "Skechers", "Mizuno", "Columbia", "The North Face", "Salomon", "Wilson", "Yonex",
+        "Decathlon", "Lululemon", "Hoka", "Oakley", "Spalding"
+    ]

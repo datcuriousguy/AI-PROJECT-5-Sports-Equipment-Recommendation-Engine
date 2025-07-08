@@ -174,5 +174,12 @@ def create_browsing_history_table():
     cursor.close()
     conn.close()
     print("Browsing_History table created successfully")
-    
+
 create_browsing_history_table()
+
+"""
+========================================================================================================================
+DATABASE POPULATION
+========================================================================================================================
+"""
+

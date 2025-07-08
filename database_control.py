@@ -203,3 +203,5 @@ def populate_clients_table():
         "Skechers", "Mizuno", "Columbia", "The North Face", "Salomon", "Wilson", "Yonex",
         "Decathlon", "Lululemon", "Hoka", "Oakley", "Spalding"
     ]
+
+    insert_query = "INSERT INTO Clients (company_name, product_catalogue) VALUES (%s, %s)"

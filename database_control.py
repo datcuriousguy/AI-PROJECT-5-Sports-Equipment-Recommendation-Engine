@@ -220,3 +220,20 @@ def populate_clients_table():
 
 #populate_clients_table()
 # run1: success
+
+def populate_products_table():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+    cursor = conn.cursor()
+
+    categories = [["shoes"], ["clothing"], ["equipment"], ["accessories", "outdoor"], ["shoes", "training"]]
+    product_names = ["Pro Trainer", "SpeedGrip Shoes", "AllWeather Jacket", "Peak Performance Shorts", "Hydro Bottle",
+                     "Wristbands", "Power Racket", "Grip Socks"]
+
+    # getting each client id in order to link it to a product and its related info (product_price, product_category, stock_quantity, image_url)
+    cursor.execute("SELECT client_id FROM Clients")
+    client_ids = [row[0] for row in cursor.fetchall()]

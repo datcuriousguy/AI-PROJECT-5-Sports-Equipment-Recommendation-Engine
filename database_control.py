@@ -237,3 +237,9 @@ def populate_products_table():
     # getting each client id in order to link it to a product and its related info (product_price, product_category, stock_quantity, image_url)
     cursor.execute("SELECT client_id FROM Clients")
     client_ids = [row[0] for row in cursor.fetchall()]
+
+    # inserting a linked product id to its product's related info
+    insert_query = """
+    INSERT INTO Products (client_id, product_name, product_price, product_category, stock_quantity, image_url)
+    VALUES (%s, %s, %s, %s, %s, %s)
+    """

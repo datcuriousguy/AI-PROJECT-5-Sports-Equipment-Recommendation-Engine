@@ -251,3 +251,4 @@ def populate_products_table():
         price = round(random.uniform(20, 150), 2)
         category = json.dumps(random.choice(categories))
         stock = random.randint(10, 200)
+        img_url = f"https://example.com/images/{name.replace(' ', '_').lower()}.jpg"  # Can be added later once front end work begins maybe

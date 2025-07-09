@@ -243,3 +243,11 @@ def populate_products_table():
     INSERT INTO Products (client_id, product_name, product_price, product_category, stock_quantity, image_url)
     VALUES (%s, %s, %s, %s, %s, %s)
     """
+
+    for _ in range(67):  # realistic number of products, like 67
+        # information in each row of the product table
+        client_id = random.choice(client_ids)
+        name = random.choice(product_names)
+        price = round(random.uniform(20, 150), 2)
+        category = json.dumps(random.choice(categories))
+        stock = random.randint(10, 200)

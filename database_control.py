@@ -252,3 +252,5 @@ def populate_products_table():
         category = json.dumps(random.choice(categories))
         stock = random.randint(10, 200)
         img_url = f"https://example.com/images/{name.replace(' ', '_').lower()}.jpg"  # Can be added later once front end work begins maybe
+        # executing the insertion query above the for loop
+        cursor.execute(insert_query, (client_id, name, price, category, stock, img_url))

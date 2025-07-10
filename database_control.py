@@ -289,3 +289,5 @@ def populate_customers_table():
         email = fake.unique.email()
         preferences = json.dumps(random.choice(preferences_pool))
         device = random.choice(device_types)
+
+        cursor.execute(insert_query, (name, age, email, preferences, device))

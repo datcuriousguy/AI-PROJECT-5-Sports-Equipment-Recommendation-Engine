@@ -273,3 +273,4 @@ def populate_customers_table():
 
     # Faker is a module that creates fake data (hopefully!)
     fake = faker.Faker()
+    device_types = ['mobile', 'desktop', 'tablet']

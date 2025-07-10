@@ -277,3 +277,8 @@ def populate_customers_table():
     preferences_pool = [["running", "shoes"], ["yoga", "apparel"], ["cycling"], ["tennis"], ["football", "gear"]]
 
     # for example, i might be browsing on a mobile and have a preference for cycling.
+
+    insert_query = """
+    INSERT INTO Customers (name, age, email, preferences, device_type)
+    VALUES (%s, %s, %s, %s, %s)
+    """

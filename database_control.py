@@ -275,3 +275,5 @@ def populate_customers_table():
     fake = faker.Faker()
     device_types = ['mobile', 'desktop', 'tablet']
     preferences_pool = [["running", "shoes"], ["yoga", "apparel"], ["cycling"], ["tennis"], ["football", "gear"]]
+
+    # for example, i might be browsing on a mobile and have a preference for cycling.

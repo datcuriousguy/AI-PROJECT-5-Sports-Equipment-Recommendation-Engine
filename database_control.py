@@ -282,3 +282,10 @@ def populate_customers_table():
     INSERT INTO Customers (name, age, email, preferences, device_type)
     VALUES (%s, %s, %s, %s, %s)
     """
+    # and this is where faker comes in!
+    for _ in range(50):  # realistic number of users
+        name = fake.name()
+        age = random.randint(18, 50)
+        email = fake.unique.email()
+        preferences = json.dumps(random.choice(preferences_pool))
+        device = random.choice(device_types)

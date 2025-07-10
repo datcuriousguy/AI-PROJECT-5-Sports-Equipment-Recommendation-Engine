@@ -270,3 +270,6 @@ def populate_customers_table():
         database="ai_project_5_database"
     )
     cursor = conn.cursor()
+
+    # Faker is a module that creates fake data (hopefully!)
+    fake = faker.Faker()

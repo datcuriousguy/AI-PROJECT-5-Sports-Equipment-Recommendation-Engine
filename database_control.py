@@ -260,3 +260,13 @@ def populate_products_table():
     conn.close()
     print("Products table populated")
 
+import faker
+
+def populate_customers_table():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+    cursor = conn.cursor()

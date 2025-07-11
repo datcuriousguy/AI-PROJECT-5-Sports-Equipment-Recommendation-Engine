@@ -298,3 +298,12 @@ def populate_customers_table():
     print("Customers table is populated!")
 
 populate_customers_table()
+
+def populate_browsing_history_table():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+    cursor = conn.cursor()

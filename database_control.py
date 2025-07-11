@@ -349,3 +349,8 @@ def populate_browsing_history_table():
 
         # we neatly insert the query into the mysql db
         cursor.execute(insert_query, (user_id, product_id, interaction, time, session_id, dwell))
+
+    conn.commit()
+    cursor.close()
+    conn.close()
+    print("Browsing_History table populated!")

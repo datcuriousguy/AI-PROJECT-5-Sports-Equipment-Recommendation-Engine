@@ -307,3 +307,7 @@ def populate_browsing_history_table():
         database="ai_project_5_database"
     )
     cursor = conn.cursor()
+
+    # now lets get all the user ids in a list to be used to add browsing history for each.
+    cursor.execute("SELECT user_id FROM Customers")
+    user_ids = [row[0] for row in cursor.fetchall()]

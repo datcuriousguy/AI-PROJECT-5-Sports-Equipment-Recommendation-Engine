@@ -296,3 +296,5 @@ def populate_customers_table():
     cursor.close()
     conn.close()
     print("Customers table is populated!")
+
+populate_customers_table()

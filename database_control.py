@@ -315,3 +315,11 @@ def populate_browsing_history_table():
     # storing the product ids in a list likewise, to be assigned to a user's browsing history.
     cursor.execute("SELECT product_id FROM Products")
     product_ids = [row[0] for row in cursor.fetchall()]
+
+    """
+    There are many ways through which users can interact with products on the page.
+    It may be through clicking or just hovering, each way showing a aidderent level of interest,
+    which can be used to show more recommendations (omg i feel like the zuck)
+    """
+
+    interaction_types = ['view', 'click', 'add_to_cart', 'purchase']

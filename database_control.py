@@ -346,3 +346,6 @@ def populate_browsing_history_table():
         time = datetime.now() - timedelta(days=random.randint(0, 30), hours=random.randint(0, 23)) # choosing a realistic time when the browsing occurred, such as 2025-07-08 19:11:36.028341
         session_id = f"sess_{random.randint(1000, 9999)}" # unique id for session (kookis)
         dwell = random.randint(5, 120) # seconds spent on a product.
+
+        # we neatly insert the query into the mysql db
+        cursor.execute(insert_query, (user_id, product_id, interaction, time, session_id, dwell))

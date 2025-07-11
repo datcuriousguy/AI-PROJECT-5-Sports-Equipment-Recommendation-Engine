@@ -323,3 +323,12 @@ def populate_browsing_history_table():
     """
 
     interaction_types = ['view', 'click', 'add_to_cart', 'purchase']
+
+    # the query to be used to insert the data into the browsing history, per customer.
+    # Note that the function for this hasnt been created yet so stuff like
+    #sesion id and dewll-time are yet to be defined.
+
+    insert_query = """
+        INSERT INTO Browsing_History (user_id, product_id, interaction_type, timestamp, session_id, dwell_time_seconds)
+        VALUES (%s, %s, %s, %s, %s, %s)
+        """

@@ -246,7 +246,26 @@ def populate_products_table():
 
     for _ in range(67):  # realistic number of products, like 67
         # information in each row of the product table
-        client_id = random.choice(client_ids)
+        if client_ids:
+            client_id = random.choice(client_ids)
+        else:
+            conn = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="password",
+                database="ai_project_5_database"
+            )
+            cursor = conn.cursor()
+
+            categories = [["shoes"], ["clothing"], ["equipment"], ["accessories", "outdoor"], ["shoes", "training"]]
+            product_names = ["Pro Trainer", "SpeedGrip Shoes", "AllWeather Jacket", "Peak Performance Shorts",
+                             "Hydro Bottle",
+                             "Wristbands", "Power Racket", "Grip Socks"]
+
+            # getting each client id in order to link it to a product and its related info (product_price, product_category, stock_quantity, image_url)
+            cursor.execute("SELECT client_id FROM Clients")
+            client_ids = [row[0] for row in cursor.fetchall()]
+
         name = random.choice(product_names)
         price = round(random.uniform(20, 150), 2)
         category = json.dumps(random.choice(categories))

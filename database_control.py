@@ -45,6 +45,7 @@ def create_and_populate_clients_table():
     for name in sports_companies:
 
         # some dummy ids for products in the product catalogue
+        
         product_ids = [i for i in range(100, 103)]
         # json.dumps() converts python object into a json type string, which is needed
         # json.dumps([101, 102, 103]) becomes "[101, 102, 103]".
@@ -207,6 +208,7 @@ def populate_clients_table():
     insert_query = "INSERT INTO Clients (company_name, product_catalogue) VALUES (%s, %s)"
 
     for name in companies:
+        
         # this for loop creates a list of three random product ids per company name
         product_ids = [random.randint(100, 200) for _ in range(3)]
         product_catalogue = json.dumps(product_ids)
@@ -240,31 +242,31 @@ def populate_products_table():
 
     # inserting a linked product id to its product's related info
     insert_query = """
-    INSERT INTO Products (client_id, product_name, product_price, product_category, stock_quantity, image_url)
+    INSERT INTO products (client_id, product_name, product_price, product_category, stock_quantity, image_url)
     VALUES (%s, %s, %s, %s, %s, %s)
     """
+    if client_ids:
+        client_id = random.choice(client_ids)
+    else:
+        conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="password",
+            database="ai_project_5_database"
+        )
+        cursor = conn.cursor()
 
+        categories = [["shoes"], ["clothing"], ["equipment"], ["accessories", "outdoor"], ["shoes", "training"]]
+        product_names = ["Pro Trainer", "SpeedGrip Shoes", "AllWeather Jacket", "Peak Performance Shorts",
+                         "Hydro Bottle",
+                         "Wristbands", "Power Racket", "Grip Socks"]
+
+        # getting each client id in order to link it to a product and its related info (product_price, product_category, stock_quantity, image_url)
+        cursor.execute("SELECT client_id FROM Clients")
+        client_ids = [row[0] for row in cursor.fetchall()]
     for _ in range(67):  # realistic number of products, like 67
         # information in each row of the product table
-        if client_ids:
-            client_id = random.choice(client_ids)
-        else:
-            conn = mysql.connector.connect(
-                host="localhost",
-                user="root",
-                password="password",
-                database="ai_project_5_database"
-            )
-            cursor = conn.cursor()
 
-            categories = [["shoes"], ["clothing"], ["equipment"], ["accessories", "outdoor"], ["shoes", "training"]]
-            product_names = ["Pro Trainer", "SpeedGrip Shoes", "AllWeather Jacket", "Peak Performance Shorts",
-                             "Hydro Bottle",
-                             "Wristbands", "Power Racket", "Grip Socks"]
-
-            # getting each client id in order to link it to a product and its related info (product_price, product_category, stock_quantity, image_url)
-            cursor.execute("SELECT client_id FROM Clients")
-            client_ids = [row[0] for row in cursor.fetchall()]
 
         name = random.choice(product_names)
         price = round(random.uniform(20, 150), 2)
@@ -278,6 +280,7 @@ def populate_products_table():
     cursor.close()
     conn.close()
     print("Products table populated")
+    populate_products_table()
 
 import faker
 
@@ -327,50 +330,36 @@ def populate_browsing_history_table():
     )
     cursor = conn.cursor()
 
-    # now lets get all the user ids in a list to be used to add browsing history for each.
+    # Get user IDs
     cursor.execute("SELECT user_id FROM Customers")
     user_ids = [row[0] for row in cursor.fetchall()]
 
-    # storing the product ids in a list likewise, to be assigned to a user's browsing history.
+    # Get product IDs
     cursor.execute("SELECT product_id FROM Products")
     product_ids = [row[0] for row in cursor.fetchall()]
 
-    """
-    There are many ways through which users can interact with products on the page.
-    It may be through clicking or just hovering, each way showing a aidderent level of interest,
-    which can be used to show more recommendations (omg i feel like the zuck)
-    """
-
     interaction_types = ['view', 'click', 'add_to_cart', 'purchase']
-
-    # the query to be used to insert the data into the browsing history, per customer.
-    # Note that the function for this hasnt been created yet so stuff like
-    #sesion id and dewll-time are yet to be defined.
 
     insert_query = """
         INSERT INTO browsing_history (user_id, product_id, interaction_type, timestamp, session_id, dwell_time_seconds)
         VALUES (%s, %s, %s, %s, %s, %s)
-        """
+    """
 
     from datetime import datetime, timedelta
 
-    for _ in range(200):  # realistic browsing volume?
-        user_id = random.choice(user_ids) # from that list defined earlier
+    for _ in range(200):
+        user_id = random.choice(user_ids)
+
         if product_ids:
-            global product_id
-            global product_ids
-            product_id = random.choice(product_ids) # from the list defined earlier
+            product_id = random.choice(product_ids)
         else:
-            product_ids = [i for i in range(100, 103)]
+            product_id = random.randint(100, 103)
 
-        interaction = random.choice(interaction_types) # a randomly chosen interaction type from the list ('view', 'click', 'add_to_cart', 'purchase')
-        time = datetime.now() - timedelta(days=random.randint(0, 30), hours=random.randint(0, 23)) # choosing a realistic time when the browsing occurred, such as 2025-07-08 19:11:36.028341
-        session_id = f"sess_{random.randint(1000, 9999)}" # unique id for session (kookis)
-        dwell = random.randint(5, 120) # seconds spent on a product.
+        interaction = random.choice(interaction_types)
+        time = datetime.now() - timedelta(days=random.randint(0, 30), hours=random.randint(0, 23))
+        session_id = f"sess_{random.randint(1000, 9999)}"
+        dwell = random.randint(5, 120)
 
-        # we neatly insert the query into the mysql db
-        global product_id
-        global product_ids
         cursor.execute(insert_query, (user_id, product_id, interaction, time, session_id, dwell))
 
     conn.commit()
@@ -378,4 +367,4 @@ def populate_browsing_history_table():
     conn.close()
     print("Browsing_History table populated!")
 
-populate_browsing_history_table()
+#populate_browsing_history_table()

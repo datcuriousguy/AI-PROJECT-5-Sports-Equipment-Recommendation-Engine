@@ -247,6 +247,7 @@ def populate_products_table():
     """
     if client_ids:
         client_id = random.choice(client_ids)
+        print(client_id)
     else:
         conn = mysql.connector.connect(
             host="localhost",
@@ -280,7 +281,7 @@ def populate_products_table():
     cursor.close()
     conn.close()
     print("Products table populated")
-    populate_products_table()
+populate_products_table()
 
 import faker
 

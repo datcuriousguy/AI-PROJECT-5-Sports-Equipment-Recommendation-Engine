@@ -356,7 +356,11 @@ def populate_browsing_history_table():
 
     for _ in range(200):  # realistic browsing volume?
         user_id = random.choice(user_ids) # from that list defined earlier
-        product_id = random.choice(product_ids) # from the list defined earlier
+        if product_ids:
+            product_id = random.choice(product_ids) # from the list defined earlier
+        else:
+            product_ids = [i for i in range(100, 103)]
+            
         interaction = random.choice(interaction_types) # a randomly chosen interaction type from the list ('view', 'click', 'add_to_cart', 'purchase')
         time = datetime.now() - timedelta(days=random.randint(0, 30), hours=random.randint(0, 23)) # choosing a realistic time when the browsing occurred, such as 2025-07-08 19:11:36.028341
         session_id = f"sess_{random.randint(1000, 9999)}" # unique id for session (kookis)

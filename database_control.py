@@ -329,15 +329,11 @@ def populate_browsing_history_table():
     #sesion id and dewll-time are yet to be defined.
 
     insert_query = """
-        INSERT INTO Browsing_History (user_id, product_id, interaction_type, timestamp, session_id, dwell_time_seconds)
+        INSERT INTO browsing_history (user_id, product_id, interaction_type, timestamp, session_id, dwell_time_seconds)
         VALUES (%s, %s, %s, %s, %s, %s)
         """
 
     from datetime import datetime, timedelta
-
-    """
-    
-    """
 
     for _ in range(200):  # realistic browsing volume?
         user_id = random.choice(user_ids) # from that list defined earlier
@@ -354,3 +350,5 @@ def populate_browsing_history_table():
     cursor.close()
     conn.close()
     print("Browsing_History table populated!")
+
+populate_browsing_history_table()

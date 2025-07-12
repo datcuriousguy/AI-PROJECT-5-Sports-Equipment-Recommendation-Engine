@@ -61,7 +61,7 @@ def create_and_populate_clients_table():
     conn.close()
     print("Clients table created!")
 
-create_and_populate_clients_table()
+# create_and_populate_clients_table()
 
 """ PRODUCTS TABLE """
 
@@ -101,7 +101,7 @@ def create_products_table():
 # run1: got an error (see commit msg)
 # updated pip and mysql-connector and it now works :)
 
-create_products_table()
+# create_products_table()
 
 """ CUSTOMERS TABLE """
 
@@ -137,7 +137,7 @@ def create_customers_table():
     conn.close()
     print("Customers table created successfully!")
 
-create_customers_table()
+#create_customers_table()
 
 """ BROWSING HISTORY TABLE """
 
@@ -175,7 +175,7 @@ def create_browsing_history_table():
     conn.close()
     print("Browsing_History table created successfully")
 
-create_browsing_history_table()
+#create_browsing_history_table()
 
 """
 ========================================================================================================================
@@ -218,7 +218,7 @@ def populate_clients_table():
     conn.close()
     print("Clients table populated")
 
-#populate_clients_table()
+# populate_clients_table()
 # run1: success
 
 def populate_products_table():
@@ -297,7 +297,7 @@ def populate_customers_table():
     conn.close()
     print("Customers table is populated!")
 
-populate_customers_table()
+# populate_customers_table()
 
 def populate_browsing_history_table():
     conn = mysql.connector.connect(

@@ -20,3 +20,7 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
         self.user_embed = nn.Embedding(num_users, embed_dim)
         self.product_embed = nn.Embedding(num_products, embed_dim)
         self.interaction_embed = nn.Embedding(num_interactions, embed_dim)
+
+        # the layers.
+        self.fc1 = nn.Linear(embed_dim * 3 + 1, 64)  # 3 embeds + dwell time
+        self.fc2 = nn.Linear(64, 32)

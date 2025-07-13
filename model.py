@@ -15,3 +15,5 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
 
         # embed dim is the number of users times the size of the vector used to represent each one (32 is a good start.)
         # a higher embed_dim means better ability to learn more complex patterns but the tradeoff is higher computation.
+        # we use embedding to make vector values more precise for tracking preferences at a more nuanced level.
+        # eg: 	[0, 0, 1, 0, 0] becomes [0.15, -0.02, 0.88, ..., 0.04] float mos. the numbers capture user habits, interests, or patterns

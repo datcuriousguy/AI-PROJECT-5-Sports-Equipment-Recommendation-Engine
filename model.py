@@ -1,3 +1,4 @@
+
 import torch.nn as nn
 
 """
@@ -11,3 +12,6 @@ prediction is made, which can be avoided.
 class RecommenderNN(nn.Module):  # we start with embed_dim as 32
     def __init__(self, num_users, num_products, num_interactions, embed_dim=32):
         super(RecommenderNN, self).__init__()
+
+        # embed dim is the number of users times the size of the vector used to represent each one (32 is a good start.)
+        # a higher embed_dim means better ability to learn more complex patterns but the tradeoff is higher computation.

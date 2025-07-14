@@ -23,6 +23,7 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
 
         # the layers.
         # fc = fully connected
+        # fc1 and fc2 are hidden
         self.fc1 = nn.Linear(embed_dim * 3 + 1, 64)  # 3 embeds + dwell time
         self.fc2 = nn.Linear(64, 32)
         self.out = nn.Linear(32, 1)

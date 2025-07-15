@@ -37,3 +37,8 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
 
 # The point of this is to get an understanding of what a specific user_id 'likes' based on mouse
 # hovering patterns across specific parts of the page.
+
+# for example, a value of:
+# 0 -> add to cart, hover or view
+# 1 -> click or purchase
+

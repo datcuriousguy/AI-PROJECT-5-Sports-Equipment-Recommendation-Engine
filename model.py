@@ -32,3 +32,5 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
         self.sigmoid = nn.Sigmoid()
 
 # Now we need to use the SQL JOIN query to connect browsing_history to customers,
+# and products - in a meaningful way such that get a user_id (hence a user)'s dwell time
+# on a specific item

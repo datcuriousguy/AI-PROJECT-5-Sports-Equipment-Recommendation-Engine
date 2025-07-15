@@ -17,6 +17,7 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
         # a higher embed_dim means better ability to learn more complex patterns but the tradeoff is higher computation.
         # we use embedding to make vector values more precise for tracking preferences at a more nuanced level.
         # eg: 	[0, 0, 1, 0, 0] becomes [0.15, -0.02, 0.88, ..., 0.04] float mos. the numbers capture user habits, interests, or patterns
+        # Basically, Instead of treating user IDs as raw numbers, learn a vector for each user that captures their behavior
         self.user_embed = nn.Embedding(num_users, embed_dim)
         self.product_embed = nn.Embedding(num_products, embed_dim)
         self.interaction_embed = nn.Embedding(num_interactions, embed_dim)

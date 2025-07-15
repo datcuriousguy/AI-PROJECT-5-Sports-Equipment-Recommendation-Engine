@@ -33,4 +33,7 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
 
 # Now we need to use the SQL JOIN query to connect browsing_history to customers,
 # and products - in a meaningful way such that get a user_id (hence a user)'s dwell time
-# on a specific item
+# on a specific item such as a specific product or category.
+
+# The point of this is to get an understanding of what a specific user_id 'likes' based on mouse
+# hovering patterns across specific parts of the page.

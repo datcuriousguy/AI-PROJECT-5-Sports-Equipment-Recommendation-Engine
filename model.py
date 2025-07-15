@@ -42,3 +42,10 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
 # 0 -> add to cart, hover or view
 # 1 -> click or purchase
 
+# just realizing i could have used docstring for all this
+
+"""
+Apparently, using a dataframe is the most recommmended way to go when soing a
+mysql + ml thing? if someone can confirm this that would be great :)
+"""
+

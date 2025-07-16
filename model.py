@@ -66,3 +66,17 @@ def load_training_data():
     # we use the join query to create a one-to-one mapping of browsing history with customer ids cause
     # there is no use in having browsing history if it can't be linked to customer ids.
     # we use LIMIT to limit the number of returned records to 500 for now.
+    query = """
+    SELECT 
+        bh.user_id,
+        bh.product_id,
+        bh.interaction_type,
+        bh.dwell_time_seconds,
+        bh.session_id,
+        bh.timestamp,
+        c.preferences
+    FROM Browsing_History bh
+    JOIN Customers c ON bh.user_id = c.user_id
+    JOIN Products p ON bh.product_id = p.product_id
+    LIMIT 500;
+    """

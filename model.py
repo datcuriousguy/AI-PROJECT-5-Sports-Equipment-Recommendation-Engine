@@ -59,3 +59,8 @@ def load_training_data():
         password="password",
         database="ai_project_5_database"
     )
+
+
+# Understanding the query:
+    # We extract all user browsing information using a subquery that aliases browsing_history table as bh,
+    # we use the join query to create a one-to-one mapping of browsing history with customer ids cause

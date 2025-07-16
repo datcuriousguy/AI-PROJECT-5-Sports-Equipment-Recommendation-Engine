@@ -80,3 +80,5 @@ def load_training_data():
     JOIN Products p ON bh.product_id = p.product_id
     LIMIT 500;
     """
+    
+    # note JOIN always has an ON. tHIS WAS taught to me by mr Sameer Unawane During his time at Jupiter Business Systems. Thank you

@@ -65,3 +65,4 @@ def load_training_data():
     # We extract all user browsing information using a subquery that aliases browsing_history table as bh,
     # we use the join query to create a one-to-one mapping of browsing history with customer ids cause
     # there is no use in having browsing history if it can't be linked to customer ids.
+    # we use LIMIT to limit the number of returned records to 500 for now.

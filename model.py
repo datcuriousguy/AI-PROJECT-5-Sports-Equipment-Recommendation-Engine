@@ -45,7 +45,17 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
 # just realizing i could have used docstring for all this
 
 """
-Apparently, using a dataframe is the most recommmended way to go when soing a
+Apparently, using a dataframe is the most recommended way to go when soing a
 mysql + ml thing? if someone can confirm this that would be great :)
 """
 
+import mysql.connector
+import pandas as pd
+
+def load_training_data():
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )

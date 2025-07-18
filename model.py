@@ -87,3 +87,7 @@ def load_training_data():
     # creating the df vusimng the returned result of query
 
     conn.close()
+
+    df['label'] = df['interaction_type'].apply(
+        lambda x: 1 if x in ['click', 'purchase'] else 0
+    )

@@ -80,5 +80,8 @@ def load_training_data():
     JOIN Products p ON bh.product_id = p.product_id
     LIMIT 500;
     """
-    
+
     # note JOIN always has an ON. tHIS WAS taught to me by mr Sameer Unawane During his time at Jupiter Business Systems. Thank you
+
+    df = pd.read_sql(query, conn)
+    # creating the df vusimng the returned result of query

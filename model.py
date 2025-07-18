@@ -93,3 +93,6 @@ def load_training_data():
     )
     # as previously discussed, if the action is click / purchase,
     # then we use 1. else its less valuable hence we use 0.
+
+    # using fillna to full in any seconds of time spent 'hovering'
+    df['dwell_time_seconds'] = df['dwell_time_seconds'].fillna(0)

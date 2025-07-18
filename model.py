@@ -91,3 +91,5 @@ def load_training_data():
     df['label'] = df['interaction_type'].apply(
         lambda x: 1 if x in ['click', 'purchase'] else 0
     )
+    # as previously discussed, if the action is click / purchase,
+    # then we use 1. else its less valuable hence we use 0.

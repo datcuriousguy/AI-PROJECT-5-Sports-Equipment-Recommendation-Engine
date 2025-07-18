@@ -85,3 +85,5 @@ def load_training_data():
 
     df = pd.read_sql(query, conn)
     # creating the df vusimng the returned result of query
+
+    conn.close()

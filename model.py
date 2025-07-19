@@ -96,3 +96,5 @@ def load_training_data():
 
     # using fillna to full in any seconds of time spent 'hovering'
     df['dwell_time_seconds'] = df['dwell_time_seconds'].fillna(0)
+
+load_training_data()

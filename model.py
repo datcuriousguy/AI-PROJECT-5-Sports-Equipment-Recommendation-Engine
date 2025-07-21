@@ -113,3 +113,5 @@ def preprocessing():
     # Load data
     df = pd.read_sql("SELECT user_id, product_id, dwell_time_seconds, interaction_type FROM Browsing_History", conn)
     print(df)
+
+preprocessing()

@@ -115,3 +115,13 @@ def preprocessing():
     print(df)
 
 preprocessing()
+
+"""
+on running preprocessing():
+
+Empty DataFrame
+Columns: [user_id, product_id, dwell_time_seconds, interaction_type]
+Index: []
+
+ -> browsing history is empty. need to populate. guess i missed it
+"""

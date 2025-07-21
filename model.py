@@ -130,3 +130,6 @@ Index: []
 
 import random
 from datetime import datetime, timedelta
+
+def populate_browsing_history(conn, num_entries=500):
+    cursor = conn.cursor()

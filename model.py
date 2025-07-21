@@ -109,3 +109,7 @@ def preprocessing():
         password="password",
         database="ai_project_5_database"
     )
+
+    # Load data
+    df = pd.read_sql("SELECT user_id, product_id, dwell_time_seconds, interaction_type FROM Browsing_History", conn)
+    print(df)

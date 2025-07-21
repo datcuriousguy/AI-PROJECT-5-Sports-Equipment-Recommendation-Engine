@@ -114,7 +114,7 @@ def preprocessing():
     df = pd.read_sql("SELECT user_id, product_id, dwell_time_seconds, interaction_type FROM Browsing_History", conn)
     print(df)
 
-preprocessing()
+# preprocessing()
 
 """
 on running preprocessing():
@@ -125,3 +125,8 @@ Index: []
 
  -> browsing history is empty. need to populate. guess i missed it
 """
+
+# populating browsing_history table mysql
+
+import random
+from datetime import datetime, timedelta

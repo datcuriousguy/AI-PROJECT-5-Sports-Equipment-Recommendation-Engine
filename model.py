@@ -97,6 +97,15 @@ def load_training_data():
     # using fillna to full in any seconds of time spent 'hovering'
     df['dwell_time_seconds'] = df['dwell_time_seconds'].fillna(0)
 
-load_training_data()
+# load_training_data()
 
 #run1: error free!
+
+def preprocessing():
+
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )

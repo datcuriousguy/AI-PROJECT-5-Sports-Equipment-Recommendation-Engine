@@ -133,6 +133,12 @@ from datetime import datetime, timedelta
 
 def populate_browsing_history(conn, num_entries=500):
     cursor = conn.cursor()
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
 
     # Get valid user_ids so that we can add them to browsing history.
     cursor.execute("SELECT user_id FROM Customers")
@@ -149,4 +155,4 @@ def populate_browsing_history(conn, num_entries=500):
     print('product ids\n\n')
     print(product_ids)
 
-populate_browsing_history()
+populate_browsing_history(conn=)

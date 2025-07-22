@@ -133,3 +133,7 @@ from datetime import datetime, timedelta
 
 def populate_browsing_history(conn, num_entries=500):
     cursor = conn.cursor()
+
+    # Get valid user_ids so that we can add them to browsing history.
+    cursor.execute("SELECT user_id FROM Customers")
+    user_ids = [row[0] for row in cursor.fetchall()]

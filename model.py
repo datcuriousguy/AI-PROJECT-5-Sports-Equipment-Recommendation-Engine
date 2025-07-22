@@ -140,3 +140,5 @@ def populate_browsing_history(conn, num_entries=500):
 
     # we need product ids to show in the browsing history
     cursor.execute("SELECT product_id FROM Products")
+    product_ids = [row[0] for row in cursor.fetchall()]
+

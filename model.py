@@ -149,3 +149,4 @@ def populate_browsing_history(conn, num_entries=500):
     print('product ids\n\n')
     print(product_ids)
 
+populate_browsing_history()

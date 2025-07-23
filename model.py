@@ -164,5 +164,7 @@ def populate_browsing_history(conn, num_entries=500):
         user_id = random.choice(user_ids)
         product_id = random.choice(product_ids)
         dwell_time_seconds = random.randint(3,129)
+        # for interaction type, keepingga bias erring towards views and kess towards clicks just like in reality.
+        interaction_type = random.choices(interaction_types, weights=[0.6, 0.3, 0.1])[0] # 0 as it is just the name of the interaction we want!
 
 # populate_browsing_history(conn=conn)

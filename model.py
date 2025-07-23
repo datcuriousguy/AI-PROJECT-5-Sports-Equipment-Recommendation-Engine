@@ -157,7 +157,8 @@ def populate_browsing_history(conn, num_entries=500):
 
     # we'll use these to fabricate data for browsing history
     interaction_types = ['view', 'click', 'purchase']
-    inserted = 0
+    inserted = 0 # we keep track of number of rows inserted 
+
 
 
 # populate_browsing_history(conn=conn)

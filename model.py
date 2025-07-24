@@ -179,4 +179,6 @@ def populate_browsing_history(conn, num_entries=500):
 
         inserted += 1
 
+    conn.commit()
+
 # populate_browsing_history(conn=conn)

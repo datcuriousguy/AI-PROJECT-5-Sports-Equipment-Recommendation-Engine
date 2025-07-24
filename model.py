@@ -188,3 +188,4 @@ conn = mysql.connector.connect(
         database="ai_project_5_database"
     )
 populate_browsing_history(conn=conn)
+# run1: success

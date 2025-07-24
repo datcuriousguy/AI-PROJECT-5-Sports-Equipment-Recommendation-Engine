@@ -167,4 +167,7 @@ def populate_browsing_history(conn, num_entries=500):
         # for interaction type, keepingga bias erring towards views and kess towards clicks just like in reality.
         interaction_type = random.choices(interaction_types, weights=[0.6, 0.3, 0.1])[0] # 0 as it is just the name of the interaction we want!
 
+        # sincs this is a browsing HISTORY, we need a number of days before when it ewas reorded:
+        days_ago = random.randint(0, 30)
+
 # populate_browsing_history(conn=conn)

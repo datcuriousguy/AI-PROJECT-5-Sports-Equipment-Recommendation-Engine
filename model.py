@@ -178,7 +178,7 @@ def populate_browsing_history(conn, num_entries=500):
         cursor.execute(insertion_statement, (user_id, product_id, dwell_time_seconds, interaction_type, timestamp))
 
         inserted += 1
-
+    print('inserted')
     conn.commit()
 
 conn = mysql.connector.connect(
@@ -189,3 +189,5 @@ conn = mysql.connector.connect(
     )
 populate_browsing_history(conn=conn)
 # run1: success
+# despite running the func, selecting * from bh table in mysql cmc gives empty set.
+#diagnosing...

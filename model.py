@@ -169,5 +169,7 @@ def populate_browsing_history(conn, num_entries=500):
 
         # sincs this is a browsing HISTORY, we need a number of days before when it ewas reorded:
         days_ago = random.randint(0, 30)
+        #integrating days_ago into the bh: previous to the current day:
+        timestamp = datetime.now() - timedelta(days=days_ago) # minus => this was in the past.
 
 # populate_browsing_history(conn=conn)

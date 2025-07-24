@@ -172,4 +172,10 @@ def populate_browsing_history(conn, num_entries=500):
         #integrating days_ago into the bh: previous to the current day:
         timestamp = datetime.now() - timedelta(days=days_ago) # minus => this was in the past.
 
+        insertion_statement = """
+            INSERT INTO Browsing_History (user_id, product_id, dwell_time_seconds, interaction_type, timestamp)
+            VALUES (%s, %s, %s, %s, %s)"""
+        
+
+
 # populate_browsing_history(conn=conn)

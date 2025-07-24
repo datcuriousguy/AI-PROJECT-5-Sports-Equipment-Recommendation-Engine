@@ -175,7 +175,8 @@ def populate_browsing_history(conn, num_entries=500):
         insertion_statement = """
             INSERT INTO Browsing_History (user_id, product_id, dwell_time_seconds, interaction_type, timestamp)
             VALUES (%s, %s, %s, %s, %s)"""
-        
+        cursor.execute(insertion_statement, (user_id, product_id, dwell_time_seconds, interaction_type, timestamp))
+
 
 
 # populate_browsing_history(conn=conn)

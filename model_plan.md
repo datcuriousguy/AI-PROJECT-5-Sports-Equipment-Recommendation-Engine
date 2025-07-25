@@ -40,3 +40,7 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
         self.sigmoid = nn.Sigmoid()
 
 ```
+
+The magic here is that - the model can now learn which users like which products and why - without being explicitly told.
+
+But here is the wild and slightly scary thing. We will never really know how it comes to recommend something - it is a black box.

@@ -369,3 +369,64 @@ def populate_browsing_history_table():
     print("Browsing_History table populated!")
 
 #populate_browsing_history_table()
+
+def populate_browsing_history(conn, num_entries=500):
+    cursor = conn.cursor()
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+
+    # Get valid user_ids so that we can add them to browsing history.
+    cursor.execute("SELECT user_id FROM Customers")
+    user_ids = [row[0] for row in cursor.fetchall()]
+
+    print('user ids\n\n')
+    print(user_ids)
+    print('\n')
+
+    # we need product ids to show in the browsing history
+    cursor.execute("SELECT product_id FROM Products")
+    product_ids = [row[0] for row in cursor.fetchall()]
+
+    print('product ids\n\n')
+    print(product_ids)
+
+    # we'll use these to fabricate data for browsing history
+    interaction_types = ['view', 'click', 'purchase']
+    inserted = 0 # we keep track of number of rows inserted
+
+    for _ in range(num_entries):
+
+        user_id = random.choice(user_ids)
+        product_id = random.choice(product_ids)
+        dwell_time_seconds = random.randint(3,129)
+        # for interaction type, keepingga bias erring towards views and kess towards clicks just like in reality.
+        interaction_type = random.choices(interaction_types, weights=[0.6, 0.3, 0.1])[0] # 0 as it is just the name of the interaction we want!
+
+        # sincs this is a browsing HISTORY, we need a number of days before when it ewas reorded:
+        days_ago = random.randint(0, 30)
+        #integrating days_ago into the bh: previous to the current day:
+        timestamp = datetime.now() - timedelta(days=days_ago) # minus => this was in the past.
+
+        insertion_statement = """
+            INSERT INTO browsing_history (user_id, product_id, dwell_time_seconds, interaction_type, timestamp)
+            VALUES (%s, %s, %s, %s, %s)"""
+        cursor.execute(insertion_statement, (user_id, product_id, dwell_time_seconds, interaction_type, timestamp))
+
+        inserted += 1
+    print('inserted')
+    conn.commit()
+
+conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="password",
+        database="ai_project_5_database"
+    )
+populate_browsing_history(conn=conn)
+# run1: success
+# despite running the func, selecting * from bh table in mysql cmc gives empty set.
+#diagnosing...

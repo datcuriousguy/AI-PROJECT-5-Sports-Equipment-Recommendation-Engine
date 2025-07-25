@@ -12,4 +12,8 @@ These three (essentially) numbers are indicators of interest in each product, an
 
 This matrix is expected to be rather empty - most products are not interacted with.
 
-This is created by multiplying the *neural network’s ide*a of a unique user, with the *neural network’s idea* of a unique product. Esssentially;
+This is created by multiplying the *neural network’s ide*a of a unique user, with the *neural network’s idea* of a unique product. 
+
+We then *teach* the neural network these relationships between a product and user-engagement (those three metrics in one compressed/embedded decimal) by training it. This is where the class RecommenderNN comes in.
+
+For some reason I cant seem to paste it without it being a mess so have to use image ig?

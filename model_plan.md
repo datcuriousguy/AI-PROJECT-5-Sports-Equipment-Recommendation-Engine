@@ -11,3 +11,5 @@ These three (essentially) numbers are indicators of interest in each product, an
 This matrix is expected to be rather empty - most products are not interacted with.
 
 We create what are called *dense vectors* which are essentially decimals (to around 3 decimal places) which represent very precise degrees of *how much a product was ‘liked’ by a user*.
+
+This is created by multiplying the *neural network’s ide*a of a unique user, with the *neural network’s idea* of a unique product. Esssentially;

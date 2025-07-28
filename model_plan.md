@@ -51,3 +51,5 @@ I would say it is important to note that there are two ways to train a model:
 - Unsupervised learning
 
 Supervised learning is useful for label-able data whose clusters and categories are clearly defined.
+
+Whereas unsupervised learning is useful for data whose differentiators are more abstract - such as mood in music or show-genres on Netflix.

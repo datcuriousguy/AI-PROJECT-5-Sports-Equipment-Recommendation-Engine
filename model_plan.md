@@ -55,3 +55,5 @@ Supervised learning is useful for label-able data whose clusters and categories 
 Whereas unsupervised learning is useful for data whose differentiators are more abstract - such as mood in music or show-genres on Netflix.
 
 The reason I mention this is because I am still unsire whether to use supervised or unsupervised learning here. need to think a little more.
+
+I’d say maybe unsupervised?? (categories can merge)

@@ -46,3 +46,6 @@ The magic here is that - the model can now learn which users like which products
 But here is the wild and slightly scary thing. We will never really know how it comes to recommend something - it is a black box.
 
 I would say it is important to note that there are two ways to train a model: 
+
+- Supervised learning
+- Unsupervised learning

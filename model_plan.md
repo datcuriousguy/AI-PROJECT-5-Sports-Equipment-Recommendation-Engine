@@ -68,3 +68,4 @@ What are the:
 - brands
 …of these products?
 What are some similar products (this is where the training kicks in)
+Output: selects the similar products as embeddings (need to be translated to english now)

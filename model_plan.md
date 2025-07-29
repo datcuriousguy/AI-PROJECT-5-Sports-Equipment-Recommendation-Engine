@@ -62,3 +62,6 @@ I’d say maybe unsupervised?? (categories can merge)
 Let’s think about the dimensions involved:
 We want to train the network on the thought process:
 What products did this consumer spend time on and show interest in?
+What are the:
+
+- product categories

@@ -57,3 +57,6 @@ Whereas unsupervised learning is useful for data whose differentiators are more 
 The reason I mention this is because I am still unsire whether to use supervised or unsupervised learning here. need to think a little more.
 
 I’d say maybe unsupervised?? (categories can merge)
+---
+
+Let’s think about the dimensions involved:

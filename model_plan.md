@@ -69,3 +69,4 @@ What are the:
 …of these products?
 What are some similar products (this is where the training kicks in)
 Output: selects the similar products as embeddings (need to be translated to english now)
+This can then be shown on a GUI after recovering the product ids within such categories, from the mysql db we created.

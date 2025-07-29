@@ -66,3 +66,4 @@ What are the:
 
 - product categories
 - brands
+…of these products?

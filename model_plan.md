@@ -60,3 +60,4 @@ I’d say maybe unsupervised?? (categories can merge)
 ---
 
 Let’s think about the dimensions involved:
+We want to train the network on the thought process:

@@ -65,3 +65,4 @@ What products did this consumer spend time on and show interest in?
 What are the:
 
 - product categories
+- brands

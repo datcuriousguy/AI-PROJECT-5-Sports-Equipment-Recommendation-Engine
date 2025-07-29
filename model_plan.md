@@ -67,3 +67,4 @@ What are the:
 - product categories
 - brands
 …of these products?
+What are some similar products (this is where the training kicks in)

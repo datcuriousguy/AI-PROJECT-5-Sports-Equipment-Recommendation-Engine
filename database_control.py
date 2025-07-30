@@ -372,12 +372,6 @@ def populate_browsing_history_table():
 
 def populate_browsing_history(conn, num_entries=500):
     cursor = conn.cursor()
-    conn = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="password",
-        database="ai_project_5_database"
-    )
 
     # Get valid user_ids so that we can add them to browsing history.
     cursor.execute("SELECT user_id FROM Customers")
@@ -399,6 +393,10 @@ def populate_browsing_history(conn, num_entries=500):
     inserted = 0 # we keep track of number of rows inserted
 
     for _ in range(num_entries):
+        import datetime
+        from datetime import timedelta
+        from datetime import time
+        import time
 
         user_id = random.choice(user_ids)
         product_id = random.choice(product_ids)
@@ -408,8 +406,10 @@ def populate_browsing_history(conn, num_entries=500):
 
         # sincs this is a browsing HISTORY, we need a number of days before when it ewas reorded:
         days_ago = random.randint(0, 30)
+        t = time.localtime
+        fmt_time = time.strftime("%Y-%m-%d %H:%M", t)
         #integrating days_ago into the bh: previous to the current day:
-        timestamp = datetime.now() - timedelta(days=days_ago) # minus => this was in the past.
+        timestamp = time.strftime(fmt_time) - timedelta(days=days_ago) # minus => this was in the past.
 
         insertion_statement = """
             INSERT INTO browsing_history (user_id, product_id, dwell_time_seconds, interaction_type, timestamp)

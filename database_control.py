@@ -398,6 +398,7 @@ def populate_browsing_history(conn, num_entries=500):
         from datetime import time
         import time
 
+        t = time.localtime()
         user_id = random.choice(user_ids)
         product_id = random.choice(product_ids)
         dwell_time_seconds = random.randint(3,129)

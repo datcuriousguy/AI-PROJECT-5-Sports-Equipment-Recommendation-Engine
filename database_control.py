@@ -394,7 +394,7 @@ def populate_browsing_history(conn, num_entries=500):
 
     for _ in range(num_entries):
         import datetime
-        from datetime import datetime, timedelta 
+        from datetime import datetime, timedelta
         from datetime import time
         import time
 
@@ -407,8 +407,9 @@ def populate_browsing_history(conn, num_entries=500):
         # sincs this is a browsing HISTORY, we need a number of days before when it ewas reorded:
         days_ago = random.randint(0, 30)
         timestamp = datetime.now() - timedelta(days=days_ago)
-        fmt_time = timestamp.strftime("%Y-%m-%d %H:%M:%S")
+
         #integrating days_ago into the bh: previous to the current day:
+        fmt_time = time.strftime("%Y-%m-%d %H:%M", t)
         timestamp = time.strftime(fmt_time) - timedelta(days=days_ago) # minus => this was in the past.
 
         insertion_statement = """

@@ -406,12 +406,13 @@ def populate_browsing_history(conn, num_entries=500):
         interaction_type = random.choices(interaction_types, weights=[0.6, 0.3, 0.1])[0] # 0 as it is just the name of the interaction we want!
 
         # sincs this is a browsing HISTORY, we need a number of days before when it ewas reorded:
+
         days_ago = random.randint(0, 30)
+
+        # instead of using a string, we use a datetime object. This allows subtraction
         timestamp = datetime.now() - timedelta(days=days_ago)
 
-        #integrating days_ago into the bh: previous to the current day:
-        fmt_time = time.strftime("%Y-%m-%d %H:%M", t)
-        timestamp = time.strftime(fmt_time) - timedelta(days=days_ago) # minus => this was in the past.
+
 
         insertion_statement = """
             INSERT INTO browsing_history (user_id, product_id, dwell_time_seconds, interaction_type, timestamp)

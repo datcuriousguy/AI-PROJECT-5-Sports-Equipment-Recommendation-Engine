@@ -143,4 +143,8 @@ def forward(self, user_id, product_id, interaction_id, dwell_time):
     :param interaction_id
     :param dwell_time
     :return: the result of the output layer
+    we use embedding to create dense vectors from user, product and interaction vectors.
+    Think of these as more detailed, more precise decimal REPRESENTATIONS of user interaction - relatively.
+
     """
+

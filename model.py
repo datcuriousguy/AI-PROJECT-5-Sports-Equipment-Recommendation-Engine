@@ -131,3 +131,16 @@ class RecommenderNN(nn.Module):  # we start with embed_dim as 32
         self.fc2 = nn.Linear(64, 32)
         self.out = nn.Linear(32, 1)
         self.sigmoid = nn.Sigmoid()
+
+# writing a forward pass function:
+
+def forward(self, user_id, product_id, interaction_id, dwell_time):
+
+    """
+    :param self
+    :param user_id
+    :param product_id
+    :param interaction_id
+    :param dwell_time
+    :return: the result of the output layer
+    """

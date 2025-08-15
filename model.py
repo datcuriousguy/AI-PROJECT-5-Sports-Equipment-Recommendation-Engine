@@ -148,3 +148,6 @@ def forward(self, user_id, product_id, interaction_id, dwell_time):
 
     """
 
+    user_vec = self.user_embed(user_id)
+    product_vec = self.product_embed(product_id)
+    interaction_vec = self.interaction_embed(interaction_id)
